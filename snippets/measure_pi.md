@@ -13,7 +13,7 @@ You will execute this notebook *in a Jupyter container running on an edge device
 
 ::: {.cell .code}
 ```python
-import os
+import os, time
 import numpy as np
 import onnxruntime as ort
 ```
@@ -28,7 +28,8 @@ We'll define a benchmark function. For convenience (since we don't need real dat
 
 ::: {.cell .code}
 ```python
-def benchmark_session(ort_session)
+def benchmark_session(ort_session):
+
     ## Benchmark inference latency for single sample
 
     num_trials = 100  # Number of trials
@@ -65,6 +66,7 @@ Now, let's evaluate our "baseline" ONNX model:
 ```python
 onnx_model_path = "models/food11.onnx"
 ort_session = ort.InferenceSession(onnx_model_path, providers=['CPUExecutionProvider'])
+benchmark_session(ort_session)
 ```
 :::
 
@@ -78,6 +80,7 @@ the model quantized with dynamic quantization:
 ```python
 onnx_model_path = "models/food11_quantized_dynamic.onnx"
 ort_session = ort.InferenceSession(onnx_model_path, providers=['CPUExecutionProvider'])
+benchmark_session(ort_session)
 ```
 :::
 
@@ -91,6 +94,7 @@ and the model quantized with static quantization, for which we permit up to 0.05
 ```python
 onnx_model_path = "models/food11_quantized_aggressive.onnx"
 ort_session = ort.InferenceSession(onnx_model_path, providers=['CPUExecutionProvider'])
+benchmark_session(ort_session)
 ```
 :::
 
@@ -98,8 +102,6 @@ ort_session = ort.InferenceSession(onnx_model_path, providers=['CPUExecutionProv
 ::: {.cell .markdown}
 
 When you are done, download the fully executed notebook from the Jupyter container environment for later reference. (Note: because it is an executable file, and you are downloading it from a site that is not secured with HTTPS, you may have to explicitly confirm the download in some browsers.)
-
-Also download the `food11.onnx` model from inside the `models` directory.
 
 :::
 
