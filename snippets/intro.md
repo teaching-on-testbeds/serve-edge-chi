@@ -40,7 +40,7 @@ For this experiment, we will provision one Raspberry Pi 5 at CHI@Edge. Edge devi
 
 ::: {.cell .markdown}
 
-## Create a lease for a GPU server
+## Create a lease for an edge device
 
 :::
 
