@@ -109,6 +109,7 @@ Run the following cell, and make sure the correct project is selected. Make sure
 ```python
 from chi import container, context, lease
 import os
+import chi
 
 context.version = "1.0" 
 context.choose_project()
