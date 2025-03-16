@@ -7,7 +7,6 @@ In this tutorial, we will benchmark machine learning models on a low-resource ed
 
 * a baseline model
 * a model with INT8 quantization
-* and the same models, using the [Arm Compute Library](https://github.com/ARM-software/ComputeLibrary) execution provider
 
 To run this experiment, you should have already created an account on Chameleon, and become part of a project. 
 
