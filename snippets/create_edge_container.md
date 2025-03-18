@@ -139,8 +139,11 @@ Finally, we will get the container logs. Run:
 
 :::
 
-
+::: {.cell .code}
+```python
 print(chi.container.get_logs(c.id))
+```
+:::
 
 
 ::: {.cell .markdown}

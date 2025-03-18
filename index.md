@@ -199,8 +199,9 @@ print(stdout)
 Finally, we will get the container logs. Run:
 
 
-
+```python
 print(chi.container.get_logs(c.id))
+```
 
 
 
